@@ -8,6 +8,7 @@ import WeatherSetting from './WeatherSetting';
 import { findLocation } from './utils';
 import dayjs from 'dayjs';
 
+
 const theme = {
   light: {
     backgroundColor: '#ededed',
@@ -36,14 +37,14 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const getMoment = locationName => {
+const getMoment = (locationName) => {
   const location = sunriseAndSunsetData.find(
-    data => data.locationName === locationName,
+    (data) => data.locationName === locationName,
   );
 
   if (!location) return null;
 
-  const now = new Date();
+  const now = dayjs();
   const nowDate = Intl.DateTimeFormat('zh-TW', {
     year: 'numeric',
     month: '2-digit',
@@ -68,7 +69,6 @@ const getMoment = locationName => {
 };
 
 const WeatherApp = () => {
-  console.log('--- invoke function component ---');
   const storageCity = localStorage.getItem('cityName');
   const [currentCity, setCurrentCity] = useState(storageCity || '臺北市');
   const currentLocation = findLocation(currentCity) || {};
