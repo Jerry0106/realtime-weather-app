@@ -97,7 +97,7 @@ export const availableLocations = [
   {
     cityName: '新北市',
     locationName: '板橋',
-    sunriseCityName: '新北市',
+    sunriseCityName: '板橋',
   },
 ];
 

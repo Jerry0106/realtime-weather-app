@@ -118,7 +118,7 @@ const WeatherSetting = ({ setCurrentPage, cityName, setCurrentCity }) => {
         id="location"
         name="location"
         onChange={handleChange}
-        value={locationName}
+        // value={locationName}   預設值
       />
 
       <datalist id="location-list">
